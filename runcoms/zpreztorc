@@ -34,6 +34,8 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'git' \
   'ruby' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 #
@@ -65,6 +67,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Set the query found color.
+zstyle ':prezto:module:history-substring-search' color 'yes'
+
 # zstyle ':prezto:module:history-substring-search:color' found ''
 
 # Set the query not found color.
@@ -112,6 +116,8 @@ zstyle ':prezto:module:prompt' theme 'verve'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
+zstyle ':prezto:module:syntax-highlighting' color 'yes'
+
 # zstyle ':prezto:module:syntax-highlighting' highlighters \
 #   'main' \
 #   'brackets' \
