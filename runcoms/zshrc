@@ -15,6 +15,4 @@ fi
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 source `brew --prefix`/etc/profile.d/z.sh
-
-export ANDROID_HVPROTO=ddm
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools/"
+alias android-studio="open -a /Applications/Android\ Studio.app"
