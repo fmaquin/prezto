@@ -12,7 +12,5 @@ fi
 
 # Customize to your needs...
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-
 source `brew --prefix`/etc/profile.d/z.sh
 alias android-studio="open -a /Applications/Android\ Studio.app"

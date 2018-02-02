@@ -28,6 +28,11 @@ function prompt_verve_precmd {
   if (( $+functions[ruby-info] )); then
     ruby-info
   fi
+
+  # Get node information
+  if (( $+functions[node-info] )); then
+    node-info
+  fi
 }
 
 function prompt_verve_setup {
@@ -61,11 +66,11 @@ function prompt_verve_setup {
   zstyle ':prezto:module:git:info:keys' format 'prompt' '(%A%B%b%d%a%m%u)%S '
 
   # ruby info (rvm, rbenv)
-  zstyle ':prezto:module:ruby:info:version' format '[%v]'
+  zstyle ':prezto:module:ruby:info:version' format '[R:%v]'
+  zstyle ':prezto:module:node:info:version' format '[N:%v]'
 
   PROMPT="%F{blue}%n %fat ${__PROMPT_verve_COLORS[2]}%m%f in ${__PROMPT_verve_COLORS[5]}%~%f "'$git_info[prompt]'"$ "
-  RPROMPT='%F{blue}${ruby_info[version]}'
+  RPROMPT='%F{magenta}${ruby_info[version]} %F{blue}${node_info[version]}'
 }
 
 prompt_verve_setup "$@"
-

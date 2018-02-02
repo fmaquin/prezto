@@ -10,9 +10,12 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export GOPATH="/Volumes/Data SSD/Development/go"
+export FASTLANE_OPT_OUT_USAGE=1
+export GOPATH="/Users/fred/Documents/Development/go"
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 export ANDROID_HVPROTO=ddm
-export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools/"
+export PATH="$PATH:/Users/Shared/Android/sdk/platform-tools/"
+
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
