@@ -14,3 +14,7 @@ fi
 
 source `brew --prefix`/etc/profile.d/z.sh
 alias android-studio="open -a /Applications/Android\ Studio.app"
+
+# added by travis gem
+[ -f /Users/fred/.travis/travis.sh ] && source /Users/fred/.travis/travis.sh
+export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
