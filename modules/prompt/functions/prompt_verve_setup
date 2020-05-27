@@ -62,15 +62,16 @@ function prompt_verve_setup {
   zstyle ':prezto:module:git:info:untracked' format "${__PROMPT_verve_COLORS[4]}?%f"
   zstyle ':prezto:module:git:info:ahead' format "${__PROMPT_verve_COLORS[5]}↑%f"
   zstyle ':prezto:module:git:info:behind' format "${__PROMPT_verve_COLORS[4]}↓%f"
-  zstyle ':prezto:module:git:info:stashed' format "${__PROMPT_verve_COLORS[2]}≋%f"
-  zstyle ':prezto:module:git:info:keys' format 'prompt' '(%A%B%b%d%a%m%u)%S '
+  zstyle ':prezto:module:git:info:stashed' format "${__PROMPT_verve_COLORS[2]}☰%f"
+  zstyle ':prezto:module:git:info:keys' format 'prompt' '%A%B(%b%d%a%m%u)%S '
 
   # ruby info (rvm, rbenv)
   zstyle ':prezto:module:ruby:info:version' format '[R:%v]'
   zstyle ':prezto:module:node:info:version' format '[N:%v]'
 
-  PROMPT="%F{blue}%n %fat ${__PROMPT_verve_COLORS[2]}%m%f in ${__PROMPT_verve_COLORS[5]}%~%f "'$git_info[prompt]'"$ "
-  RPROMPT='%F{magenta}${ruby_info[version]} %F{blue}${node_info[version]}'
+  PROMPT="%F{blue}%n %fat ${__PROMPT_verve_COLORS[2]}%m%f in ${__PROMPT_verve_COLORS[5]}%~%f "'$git_info[prompt]'"
+$ "
+  RPROMPT='%F{magenta}${ruby_info[version]} %F{green}${node_info[version]}'
 }
 
 prompt_verve_setup "$@"
