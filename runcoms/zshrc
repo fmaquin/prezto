@@ -12,11 +12,17 @@ fi
 
 # Customize to your needs...
 
-source `brew --prefix`/etc/profile.d/z.sh
-alias android-studio="open -a /Applications/Android\ Studio.app"
+case `uname` in
+  Darwin)
+    path=('/opt/homebrew/bin' $path)
+    export PATH
 
-# added by travis gem
-[ -f /Users/fred/.travis/travis.sh ] && source /Users/fred/.travis/travis.sh
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+    source `brew --prefix`/etc/profile.d/z.sh
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+    alias android-studio="open -a /Applications/Android\ Studio.app"
+    alias brow='arch --x86_64 /usr/local/Homebrew/bin/brew'
+
+    export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
+    export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+  ;;
+esac
